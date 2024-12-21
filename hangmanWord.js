@@ -9,7 +9,6 @@ function updateDisplay() {
 function checkLetter() {
     const input = document.getElementById('guessInput').value.toLowerCase();
     document.getElementById('guessInput').value = "";
-
     if (input && input.length === 1 && /^[a-z]$/.test(input)) {
         if (word.includes(input)) {
             let found = false;
