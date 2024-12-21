@@ -13,7 +13,6 @@ function checkLetter() {
     if (input && input.length === 1 && /^[a-z]$/.test(input)) {
         if (word.includes(input)) {
             let found = false;
-            // Loop through the word and reveal the letter
             for (let i = 0; i < word.length; i++) {
                 if (word[i] === input && guessedWord[i] === '_') {
                     guessedWord[i] = input; 
