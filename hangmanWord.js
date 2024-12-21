@@ -1,5 +1,5 @@
 const word = "spanzuratoare".toLowerCase();
-let lives = 7;  // Number of lives
+let lives = 7;
 let guessedWord = Array(word.length).fill('_');
 
 function updateDisplay() {
