@@ -23,7 +23,7 @@ function checkLetter() {
             }
         } else {
             --lives;
-            document.getElementById('gameResult').innerText = `Lives left: ${lives}. "${input}" is incorrect.`;
+            document.getElementById('gameResult').innerText = `Lives left: ${lives} "${input}" is incorrect.`;
         }
 
         updateDisplay();
