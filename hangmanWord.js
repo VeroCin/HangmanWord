@@ -6,11 +6,13 @@ function updateDisplay() {
     document.getElementById('wordDisplay').innerText = guessedWord.join(' ');
 }
 
+function isValidLetter(input) {
+    return input.length === 1 && ((input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'Z'));
+}
 function checkLetter() {
     const input = document.getElementById('guessInput').value.toLowerCase();
     document.getElementById('guessInput').value = "";
-
-    if (input && input.length === 1 && /^[a-z]$/.test(input)) {
+    if (isValidLetter(input)) {
         verifyLetter(input);
         checkGameState();
     }
