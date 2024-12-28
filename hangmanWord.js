@@ -9,6 +9,7 @@ function updateDisplay() {
 function isValidLetter(input) {
     return input.length === 1 && ((input >= 'a' && input <= 'z') || (input >= 'A' && input <= 'Z'));
 }
+
 function checkLetter() {
     const input = document.getElementById('guessInput').value.toLowerCase();
     document.getElementById('guessInput').value = "";
