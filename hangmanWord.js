@@ -1,6 +1,7 @@
-const word = "spanzuratoare".toLowerCase();
+const word = ['January', 'February', 'March','Spanzuratoare', 'maria', 'ion'];
+const oneWord = word[Math.floor(Math.random() * word.length)].toLowerCase();
 let lives = 7;
-let guessedWord = Array(word.length).fill('_');
+let guessedWord = Array(oneWord.length).fill('_');
 
 function updateDisplay() {
     document.getElementById('wordDisplay').innerText = guessedWord.join(' ');
@@ -20,10 +21,10 @@ function checkLetter() {
 }
 
 function verifyLetter(input) {
-    if (word.includes(input)) {
+    if (oneWord.includes(input)) {
         let found = false;
-        for (let i = 0; i < word.length; ++i) {
-            if (word[i] === input && guessedWord[i] === '_') {
+        for (let i = 0; i < oneWord.length; ++i) {
+            if (oneWord[i] === input && guessedWord[i] === '_') {
                 guessedWord[i] = input;
                 found = true;
             }
@@ -38,7 +39,7 @@ function verifyLetter(input) {
 
 function checkGameState() {
     if (lives === 0) {
-        document.getElementById('gameResult').innerText = `Game over! The word was: "${word}"`;
+        document.getElementById('gameResult').innerText = `Game over! The word was: "${oneWord}"`;
         document.getElementById('guessInput').disabled = true;
     } else if (!guessedWord.includes('_')) {
         document.getElementById('gameResult').innerText = "You win!";
