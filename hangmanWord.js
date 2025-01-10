@@ -29,7 +29,11 @@ function verifyLetter(input) {
                 found = true;
             }
         }
-        document.getElementById('gameResult').innerText = found ? "Letter found!" : "";
+        if (found) {
+            document.getElementById('gameResult').innerText = "Letter found!";
+        } else {
+            document.getElementById('gameResult').innerText = "Letter was found";
+        }
     } else {
         --lives;
         document.getElementById('gameResult').innerText = `Lives left: ${lives} "${input}" is incorrect.`;
